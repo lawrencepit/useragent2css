@@ -1,4 +1,5 @@
 # encoding: utf-8
+require 'useragent2css/version'
 module UserAgent
 
   def self.css(ua)

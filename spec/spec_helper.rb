@@ -10,5 +10,5 @@ require 'action_controller'
 require 'action_view'
 puts "Testing with ActionPack #{ActionPack::VERSION::STRING}"
 
-require 'user_agent'
+require 'useragent2css'
 

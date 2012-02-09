@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "user_agent/version"
+require "useragent2css/version"
 
 Gem::Specification.new do |s|
   s.name = %q{useragent2css}
