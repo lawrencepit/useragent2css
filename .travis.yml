@@ -1,0 +1,11 @@
+rvm:
+  - 1.9.3
+branches:
+  only:
+    - master
+notifications:
+  email:
+    recipients:
+       - lawrence.pit@gmail.com
+    on_success: change
+    on_failure: always
