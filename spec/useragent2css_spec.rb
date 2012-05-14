@@ -16,6 +16,11 @@ describe UserAgent do
     UserAgent.css("").should == ""
   end
 
+  it "mobile" do
+    UserAgent.css("Mozilla/5.0(iPad; U; CPU iPhone OS 3_2 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Version/4.0.4 Mobile/7B314 Safari/531.21.10").should == "webkit safari safari4 mobile iphone"
+    UserAgent.css("Mozilla/4.0 (compatible; MSIE 7.0; Windows Phone OS 7.5; Trident/3.1; IEMobile/7.0;").should == "ie ie7 mobile win"
+  end
+
   it "iron" do
     UserAgent.css("mozilla/5.0 (windows; u; windows nt 5.1; en-us) applewebkit/530.1 (khtml, like gecko) iron/2.0.168.0 safari/530.1").should == "webkit iron win"
   end
@@ -179,9 +184,9 @@ describe UserAgent do
     assert_browser_strings({
       "mozilla/5.0 (windows; u; windows nt 6.0; pt-br) applewebkit/528.16 (khtml, like gecko) version/4.0 safari/528.16"          => "webkit safari safari4 win",
       "Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en-gb) AppleWebKit/523.10.6 (KHTML, like Gecko) Version/3.0.4 Safari/523.10.6"  => "webkit safari safari3 mac",    # Safari 3.0.4 on Mac OS 10.5.1 Intel
-      "Mozilla/5.0 (iPod; U; CPU like Mac OS X; en) AppleWebKit/420.1 (KHTML, like Gecko) Version/3.0 Mobile/3A100a Safari/419.3" => "webkit safari safari3 ipod",   # Safari 3.0 for the iPod touch
-      "Mozilla/5.0 (iPad; U; CPU like Mac OS X; en) AppleWebKit/420.1 (KHTML, like Gecko) Version/3.0 Mobile/3A100a Safari/419.3" => "webkit safari safari3 ipad",   # Safari 3.0 for the iPad
-      "Mozilla/5.0 (iPhone; U; CPU like Mac OS X; en) AppleWebKit/420+ (KHTML, like Gecko) Version/3.0 Mobile/1C28 Safari/419.3"  => "webkit safari safari3 iphone", # Safari 3.0 for the iPhone
+      "Mozilla/5.0 (iPod; U; CPU like Mac OS X; en) AppleWebKit/420.1 (KHTML, like Gecko) Version/3.0 Mobile/3A100a Safari/419.3" => "webkit safari safari3 mobile ipod",   # Safari 3.0 for the iPod touch
+      "Mozilla/5.0 (iPad; U; CPU like Mac OS X; en) AppleWebKit/420.1 (KHTML, like Gecko) Version/3.0 Mobile/3A100a Safari/419.3" => "webkit safari safari3 mobile ipad",   # Safari 3.0 for the iPad
+      "Mozilla/5.0 (iPhone; U; CPU like Mac OS X; en) AppleWebKit/420+ (KHTML, like Gecko) Version/3.0 Mobile/1C28 Safari/419.3"  => "webkit safari safari3 mobile iphone", # Safari 3.0 for the iPhone
       "Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en) AppleWebKit/522.11.1 (KHTML, like Gecko) Version/3.0.3 Safari/522.12.1"     => "webkit safari safari3 mac",    # Safari 3.0.3 for Intel version of iMac
       "Mozilla/5.0 (Windows; U; Windows NT 5.1; bg) AppleWebKit/522.13.1 (KHTML, like Gecko) Version/3.0.2 Safari/522.13.1"       => "webkit safari safari3 win",    # Safari 3.0.2 beta for Windows XP
       "Mozilla/5.0 (Windows; U; Windows NT 5.1; ru) AppleWebKit/522.11.3 (KHTML, like Gecko) Version/3.0 Safari/522.11.3"         => "webkit safari safari3 win",    # Safari browser V 3.0 Beta for Windows XP SP2

@@ -29,6 +29,7 @@ module UserAgent
         o.join(" ")
       when /gecko/, /mozilla/ ;   "gecko"
     end
+    br = (br.nil? ? "mobile" : "#{br} mobile") if ua.include?('mobile')
     os = ua.include?('mac') || ua.include?('darwin') ?
            ua.include?('iphone') ? 'iphone' : ua.include?('ipod') ? 'ipod' : ua.include?('ipad') ? 'ipad' : 'mac' :
          ua.include?('x11') || ua.include?('linux') ? 'linux' :
