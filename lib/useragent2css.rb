@@ -11,6 +11,7 @@ module UserAgent
         o.join(" ")
       when /webtv/ ;              "gecko"
       when /msie (\d)/ ;          "ie ie#{$1}"
+      when /rv\:(\d\d)\./ ;       "gecko ie#{$1}"
       when %r{firefox/2} ;        "gecko ff2"
       when %r{firefox/3.5} ;      "gecko ff3 ff3_5"
       when %r{firefox/3} ;        "gecko ff3"
